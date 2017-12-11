@@ -1,0 +1,106 @@
+<!-- Registration modal -->
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-
+          hidden="true">Close</span></button>
+        <h4 class="modal-title text-center" id="registerModelLabel">Register</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+          <p id="loginerror"></p>
+            <form id="signupForm">{% csrf_token %}
+              <div class="form-group">
+                <input type="text" class="form-control" id="username" name="name" 
+                    placeholder="Full Name" required="required" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" name="phone" 
+                  placeholder="Mobile Number" maxlength="10" size="10" required="required" />
+                <p class="text-danger text-center" id="user-phone-exists-error" 
+                 style="display:none;">Phone already registered.</p>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="email" name="email" 
+                 placeholder="Email" required="required" />
+                <p class="text-danger text-center" id="user-email-exists-error" 
+                 style="display:none;">Email already registered.</p>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" 
+                   placeholder="Password" required="required" />
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="confirm_password" 
+                  name="confirm_password" placeholder="Confirm Password" required="required" />
+              </div>
+              <div class="form-group text-center">
+                <input type="submit" value="Sign Up" class="btn  btn-lg btn-block btn-cakemporos" 
+                    id="signUp-submit">
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <a href="#" onclick="openLogin()"><b>Login</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Registration Modal -->
+
+
+<!--  Login Form Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-
+          hidden="true">Close</span></button>
+        <h4 class="modal-title text-center" id="loginModelLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+          <p id="loginerror"></p>
+            <form class="login-form" id="loginform">{% csrf_token %}
+              <div class="form-group">
+                <input type="name" name="phone" id="login-username" class="form-control" 
+                 placeholder="Phone Number" required="required" maxlength="10" size="10"/>
+                <label id="no-pno-label" class="control-label" for="login-username" 
+                 style="display:none;">Please enter Phone Number.</label>
+              </div>
+              <p class="text-danger text-center" id="no-user-error" style="display:none;">We 
+                 didn't find you! Please Register</p>
+              <div class="form-group">
+                <input type="password" name="password" id="login-password" class="form-control" 
+                 placeholder="Password" required="required" />
+              </div>
+              <p class="text-danger text-center" id="password-error" style="display:none;">Wrong 
+                Password!</p>
+              <div class="form-group text-center"> 
+                <input type="submit" value="Login" class="btn  btn-lg btn-block btn-cakemporos" 
+                 id="signUp-Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <a href="#" onclick="openForgotPassword()"><b>Forgot Password</b></a>&nbsp;<a 
+              href="#">or</a>&nbsp;<a href="#" onclick="openRegister()"><b>Register</b></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- End of Login Modal -->
